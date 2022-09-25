@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SingletonPattern">
+  <ClassDiagramComponents>
+    <Class name="Singletonn" package="SingletonPattern" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="interimcheck" type="Singletonn" visibility="private" isStatic="true" isVolatile="true"/>
+        <Field name="flag" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="freemoney" type="int" visibility="private"/>
+        <Field name="pacmoney" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Singletonn" visibility="public" isStatic="true"/>
+        <Method name="setFreeMoney" returnType="void" visibility="public">
+          <Argument type="int" name="m"/>
+        </Method>
+        <Method name="getFreeMoney" returnType="int" visibility="public"/>
+        <Method name="setPacMoney" returnType="void" visibility="public">
+          <Argument type="int" name="m"/>
+        </Method>
+        <Method name="getPacMoney" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="SingletonPattern.Singletonn" target="SingletonPattern.Singletonn" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="interimcheck" source="SingletonPattern.Singletonn" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

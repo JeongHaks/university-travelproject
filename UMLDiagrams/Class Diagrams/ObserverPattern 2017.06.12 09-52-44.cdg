@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ObserverPattern">
+  <ClassDiagramComponents>
+    <Class name="Culture" package="ObserverPattern" visibility="public" xPosition="572.0" yPosition="309.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="cp" type="int" visibility="private"/>
+        <Field name="daegu" type="Culturestate" visibility="package"/>
+        <Field name="paris" type="Culturestate" visibility="package"/>
+        <Field name="tokyo" type="Culturestate" visibility="package"/>
+        <Field name="jeju" type="Culturestate" visibility="package"/>
+        <Field name="seoul" type="Culturestate" visibility="package"/>
+        <Field name="culturestate" type="Culturestate" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCulturepice" returnType="int" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Schedule" package="ObserverPattern" visibility="public" xPosition="4.0" yPosition="309.0">
+      <Fields>
+        <Field name="startmonth" type="int" visibility="private"/>
+        <Field name="startday" type="int" visibility="private"/>
+        <Field name="returnmonth" type="int" visibility="private"/>
+        <Field name="returnday" type="int" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="text" type="String" visibility="private"/>
+        <Field name="observers" type="ArrayList&lt;Observer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+        <Method name="setdays" returnType="void" visibility="public">
+          <Argument type="int" name="startmonth"/>
+          <Argument type="int" name="startday"/>
+          <Argument type="int" name="returnmonth"/>
+          <Argument type="int" name="returnday"/>
+          <Argument type="int" name="people"/>
+          <Argument type="String" name="place"/>
+        </Method>
+        <Method name="getStartmonth" returnType="int" visibility="public"/>
+        <Method name="getStartday" returnType="int" visibility="public"/>
+        <Method name="getReturnmonth" returnType="int" visibility="public"/>
+        <Method name="getReturnday" returnType="int" visibility="public"/>
+        <Method name="getPeople" returnType="int" visibility="public"/>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDaily" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Traffic" package="ObserverPattern" visibility="public" xPosition="821.0" yPosition="309.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="tp" type="int" visibility="private"/>
+        <Field name="daegu" type="TrafficState" visibility="package"/>
+        <Field name="paris" type="TrafficState" visibility="package"/>
+        <Field name="tokyo" type="TrafficState" visibility="package"/>
+        <Field name="jeju" type="TrafficState" visibility="package"/>
+        <Field name="seoul" type="TrafficState" visibility="package"/>
+        <Field name="state" type="TrafficState" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Observer" package="ObserverPattern" visibility="public" xPosition="626.0" yPosition="20.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Subject" package="ObserverPattern" visibility="public" xPosition="4.0" yPosition="20.0">
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="subject" source="ObserverPattern.Traffic" target="ObserverPattern.Subject" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ObserverPattern.Subject" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ObserverPattern.Culture" target="ObserverPattern.Observer"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ObserverPattern.Schedule" target="ObserverPattern.Subject"/>
+    <HasRelation name="subject" source="ObserverPattern.Culture" target="ObserverPattern.Subject" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ObserverPattern.Schedule" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ObserverPattern.Traffic" target="ObserverPattern.Observer"/>
+    <HasRelation name="observers" source="ObserverPattern.Schedule" target="ObserverPattern.Observer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Observer&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

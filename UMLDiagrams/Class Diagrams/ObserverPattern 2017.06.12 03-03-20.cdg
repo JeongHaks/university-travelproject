@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ObserverPattern">
+  <ClassDiagramComponents>
+    <Class name="Schedule" package="ObserverPattern" visibility="public" xPosition="20.0" yPosition="217.0">
+      <Fields>
+        <Field name="startmonth" type="int" visibility="private"/>
+        <Field name="startday" type="int" visibility="private"/>
+        <Field name="returnmonth" type="int" visibility="private"/>
+        <Field name="returnday" type="int" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="text" type="String" visibility="private"/>
+        <Field name="observers" type="ArrayList&lt;Observer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+        <Method name="setdays" returnType="void" visibility="public">
+          <Argument type="int" name="startmonth"/>
+          <Argument type="int" name="startday"/>
+          <Argument type="int" name="returnmonth"/>
+          <Argument type="int" name="returnday"/>
+          <Argument type="int" name="people"/>
+          <Argument type="String" name="place"/>
+        </Method>
+        <Method name="getStartmonth" returnType="int" visibility="public"/>
+        <Method name="getStartday" returnType="int" visibility="public"/>
+        <Method name="getReturnmonth" returnType="int" visibility="public"/>
+        <Method name="getReturnday" returnType="int" visibility="public"/>
+        <Method name="getPeople" returnType="int" visibility="public"/>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDaily" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Observer" package="ObserverPattern" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Subject" package="ObserverPattern" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="observers" source="ObserverPattern.Schedule" target="ObserverPattern.Observer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Observer&gt;"/>
+    <UseRelation source="ObserverPattern.Schedule" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ObserverPattern.Subject" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ObserverPattern.Schedule" target="ObserverPattern.Subject"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

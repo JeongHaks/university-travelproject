@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CommandPattern">
+  <ClassDiagramComponents>
+    <Class name="OtherExpenses" package="CommandPattern" visibility="public" xPosition="20.0" yPosition="305.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="package"/>
+        <Field name="sm" type="ShowMoney" visibility="package"/>
+        <Field name="command" type="Command" visibility="private"/>
+        <Field name="priceA" type="int" visibility="private"/>
+        <Field name="numm" type="String" visibility="private"/>
+        <Field name="food" type="String[]" visibility="package"/>
+        <Field name="search" type="String" visibility="package"/>
+        <Field name="price" type="int" visibility="package"/>
+        <Field name="priceBB" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setCommand" returnType="void" visibility="public">
+          <Argument type="Command" name="command"/>
+        </Method>
+        <Method name="setSearch" returnType="void" visibility="public">
+          <Argument type="String" name="num"/>
+          <Argument type="int" name="priceA"/>
+        </Method>
+        <Method name="getCommand" returnType="String[]" visibility="public"/>
+        <Method name="getSearch" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Searchlist" package="CommandPattern" visibility="public" xPosition="351.0" yPosition="26.0">
+      <Fields>
+        <Field name="showmoney" type="ShowMoney" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ShowMoney" name="showmoney"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="OtherUp" returnType="void" visibility="public">
+          <Argument type="int" name="av"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShowMoney" package="CommandPattern" visibility="public" xPosition="388.0" yPosition="435.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="usedMoney" returnType="void" visibility="public">
+          <Argument type="int" name="pr"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Command" package="CommandPattern" visibility="public" xPosition="71.0" yPosition="52.0">
+      <Methods>
+        <Method name="OtherUp" returnType="void" visibility="public">
+          <Argument type="int" name="av"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="CommandPattern.Searchlist" target="CommandPattern.Command"/>
+    <HasRelation name="showmoney" source="CommandPattern.Searchlist" target="CommandPattern.ShowMoney" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CommandPattern.OtherExpenses" target="CommandPattern.Command" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sm" source="CommandPattern.OtherExpenses" target="CommandPattern.ShowMoney" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="command" source="CommandPattern.OtherExpenses" target="CommandPattern.Command" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

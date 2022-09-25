@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CompositePattern">
+  <ClassDiagramComponents>
+    <Class name="Menu" package="CompositePattern" visibility="public" xPosition="550.0" yPosition="389.0">
+      <Fields>
+        <Field name="Menu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuComponent" package="CompositePattern" visibility="public" isAbstract="true" xPosition="1263.0" yPosition="-95.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuDaegu" package="CompositePattern" visibility="public" xPosition="886.0" yPosition="671.0">
+      <Fields>
+        <Field name="daeguMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="daeguSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sales"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuDetail" package="CompositePattern" visibility="public" xPosition="150.0" yPosition="352.0">
+      <Fields>
+        <Field name="place" type="String" visibility="package"/>
+        <Field name="description" type="String" visibility="package"/>
+        <Field name="days" type="String" visibility="package"/>
+        <Field name="price" type="int" visibility="package"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuJeju" package="CompositePattern" visibility="public" xPosition="1294.0" yPosition="671.0">
+      <Fields>
+        <Field name="jejuMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="jejuSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuParis" package="CompositePattern" visibility="public" xPosition="2654.0" yPosition="92.0">
+      <Fields>
+        <Field name="pairsMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="pairsSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuSales" package="CompositePattern" visibility="public" xPosition="351.0" yPosition="44.0">
+      <Fields>
+        <Field name="traffic" type="String" visibility="package"/>
+        <Field name="stay" type="String" visibility="package"/>
+        <Field name="culture" type="String" visibility="package"/>
+        <Field name="sale" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuSeoul" package="CompositePattern" visibility="public" xPosition="2226.0" yPosition="366.0">
+      <Fields>
+        <Field name="seoulMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="seoulSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuTokyo" package="CompositePattern" visibility="public" xPosition="1710.0" yPosition="671.0">
+      <Fields>
+        <Field name="tokyoMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="tokyoSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="rowData" type="Object" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getPackage" returnType="Object[]" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent"/>
+    <UseRelation source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.Menu" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent"/>
+    <UseRelation source="CompositePattern.MenuComponent" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyoMenu" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="pairsMenu" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <UseRelation source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuSales" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="daeguSales" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="daeguMenu" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="pairsSales" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="tokyoSales" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent"/>
+    <UseRelation source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuDetail" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="Menu" source="CompositePattern.Menu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.Menu" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="seoulMenu" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="jejuSales" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="seoulSales" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="jejuMenu" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="IteratorPattern">
+  <ClassDiagramComponents>
+    <Class name="CompositeIterator" package="IteratorPattern" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="stack" type="Stack&lt;Iterator&lt;MenuComponent&gt;&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Iterator" name="iterator"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="next" returnType="MenuComponent" visibility="public"/>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NullIterator" package="IteratorPattern" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="next" returnType="Object" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

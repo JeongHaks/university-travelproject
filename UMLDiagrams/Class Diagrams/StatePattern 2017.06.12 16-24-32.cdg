@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="StatePattern">
+  <ClassDiagramComponents>
+    <Class name="Culture" package="StatePattern" visibility="public" xPosition="80.0" yPosition="2.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="cp" type="int" visibility="private"/>
+        <Field name="daegu" type="Culturestate" visibility="package"/>
+        <Field name="paris" type="Culturestate" visibility="package"/>
+        <Field name="tokyo" type="Culturestate" visibility="package"/>
+        <Field name="jeju" type="Culturestate" visibility="package"/>
+        <Field name="seoul" type="Culturestate" visibility="package"/>
+        <Field name="culturestate" type="Culturestate" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCulturepice" returnType="int" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureDaegu" package="StatePattern" visibility="public" xPosition="95.0" yPosition="32.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="dcul" type="String[]" visibility="private"/>
+        <Field name="dp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureJeju" package="StatePattern" visibility="public" xPosition="80.0" yPosition="44.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="jcul" type="String[]" visibility="private"/>
+        <Field name="jp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureParis" package="StatePattern" visibility="public" xPosition="103.0" yPosition="44.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="pcul" type="String[]" visibility="private"/>
+        <Field name="pp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureSeoul" package="StatePattern" visibility="public" xPosition="95.0" yPosition="119.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="scul" type="String[]" visibility="private"/>
+        <Field name="sp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureTokyo" package="StatePattern" visibility="public" xPosition="98.0" yPosition="63.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="tcul" type="String[]" visibility="private"/>
+        <Field name="tp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Stay" package="StatePattern" visibility="public" xPosition="111.0" yPosition="495.0">
+      <Fields>
+        <Field name="sp" type="int" visibility="private"/>
+        <Field name="GuestHouse" type="Staystate" visibility="package"/>
+        <Field name="Hotel" type="Staystate" visibility="package"/>
+        <Field name="Pension" type="Staystate" visibility="package"/>
+        <Field name="Resort" type="Staystate" visibility="package"/>
+        <Field name="staystate" type="Staystate" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setState" returnType="void" visibility="public">
+          <Argument type="String" name="s"/>
+        </Method>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoompice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+          <Argument type="int" name="num"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayGuestHouse" package="StatePattern" visibility="public" xPosition="20.0" yPosition="856.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="groom" type="String[]" visibility="private"/>
+        <Field name="grp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayHotel" package="StatePattern" visibility="public" xPosition="220.0" yPosition="856.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="hroom" type="String[]" visibility="private"/>
+        <Field name="hrp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayPension" package="StatePattern" visibility="public" xPosition="103.0" yPosition="906.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="proom" type="String[]" visibility="private"/>
+        <Field name="prp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayResort" package="StatePattern" visibility="public" xPosition="119.0" yPosition="958.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="rroom" type="String[]" visibility="private"/>
+        <Field name="rrp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Traffic" package="StatePattern" visibility="public" xPosition="455.0" yPosition="534.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="tp" type="int" visibility="private"/>
+        <Field name="daegu" type="TrafficState" visibility="package"/>
+        <Field name="paris" type="TrafficState" visibility="package"/>
+        <Field name="tokyo" type="TrafficState" visibility="package"/>
+        <Field name="jeju" type="TrafficState" visibility="package"/>
+        <Field name="seoul" type="TrafficState" visibility="package"/>
+        <Field name="state" type="TrafficState" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficDaegu" package="StatePattern" visibility="public" xPosition="1274.0" yPosition="964.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="bus" type="String" visibility="private"/>
+        <Field name="ktx" type="String" visibility="private"/>
+        <Field name="bp" type="int" visibility="private"/>
+        <Field name="kp" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficJeju" package="StatePattern" visibility="public" xPosition="1093.0" yPosition="958.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="vessel" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="vp" type="int" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficParis" package="StatePattern" visibility="public" xPosition="506.0" yPosition="984.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficSeoul" package="StatePattern" visibility="public" xPosition="713.0" yPosition="946.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="bus" type="String" visibility="private"/>
+        <Field name="ktx" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="bp" type="int" visibility="private"/>
+        <Field name="kp" type="int" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficTokyo" package="StatePattern" visibility="public" xPosition="909.0" yPosition="958.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Culturestate" package="StatePattern" visibility="public" xPosition="103.0" yPosition="177.0">
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Staystate" package="StatePattern" visibility="public" xPosition="-4.0" yPosition="920.0">
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="TrafficState" package="StatePattern" visibility="public" xPosition="1058.0" yPosition="534.0">
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="jeju" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seoul" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureJeju" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureDaegu" target="StatePattern.Culturestate"/>
+    <HasRelation name="GuestHouse" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paris" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficParis" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayHotel" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayHotel" target="StatePattern.Staystate"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficJeju" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyo" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="state" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficParis" target="StatePattern.TrafficState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureTokyo" target="StatePattern.Culturestate"/>
+    <HasRelation name="culturestate" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayPension" target="StatePattern.Staystate"/>
+    <HasRelation name="daegu" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayResort" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Resort" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureJeju" target="StatePattern.Culturestate"/>
+    <HasRelation name="staystate" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureSeoul" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyo" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayGuestHouse" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureDaegu" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficDaegu" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayPension" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paris" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficJeju" target="StatePattern.TrafficState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficDaegu" target="StatePattern.TrafficState"/>
+    <HasRelation name="jeju" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seoul" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureParis" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="daegu" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureTokyo" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayGuestHouse" target="StatePattern.Staystate"/>
+    <HasRelation name="Hotel" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureParis" target="StatePattern.Culturestate"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficTokyo" target="StatePattern.TrafficState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficSeoul" target="StatePattern.TrafficState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureSeoul" target="StatePattern.Culturestate"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficTokyo" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Pension" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayResort" target="StatePattern.Staystate"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

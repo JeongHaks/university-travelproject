@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JavaApplication5 (3)">
+  <ClassDiagramComponents>
+    <Interface name="Command" package="CommandPattern" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="OtherUp" returnType="void" visibility="public">
+          <Argument type="int" name="av"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="OtherExpenses" package="CommandPattern" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="package"/>
+        <Field name="sm" type="ShowMoney" visibility="package"/>
+        <Field name="command" type="Command" visibility="private"/>
+        <Field name="priceA" type="int" visibility="private"/>
+        <Field name="numm" type="String" visibility="private"/>
+        <Field name="food" type="String[]" visibility="package"/>
+        <Field name="search" type="String" visibility="package"/>
+        <Field name="price" type="int" visibility="package"/>
+        <Field name="priceBB" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setCommand" returnType="void" visibility="public">
+          <Argument type="Command" name="command"/>
+        </Method>
+        <Method name="setSearch" returnType="void" visibility="public">
+          <Argument type="String" name="num"/>
+          <Argument type="int" name="priceA"/>
+        </Method>
+        <Method name="getCommand" returnType="String[]" visibility="public"/>
+        <Method name="getSearch" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Searchlist" package="CommandPattern" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="showmoney" type="ShowMoney" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ShowMoney" name="showmoney"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="OtherUp" returnType="void" visibility="public">
+          <Argument type="int" name="av"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShowMoney" package="CommandPattern" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="usedMoney" returnType="void" visibility="public">
+          <Argument type="int" name="pr"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CompositeMain" package="CompositePattern" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="CompositePattern" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="Menu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuComponent" package="CompositePattern" visibility="public" isAbstract="true" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuDaegu" package="CompositePattern" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="daeguMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="daeguSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sales"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuDetail" package="CompositePattern" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="place" type="String" visibility="package"/>
+        <Field name="description" type="String" visibility="package"/>
+        <Field name="days" type="String" visibility="package"/>
+        <Field name="price" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuJeju" package="CompositePattern" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="jejuMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="jejuSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuList" package="CompositePattern" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="allMenus" type="MenuComponent" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MenuComponent" name="allMenus"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="printMenu" returnType="void" visibility="public"/>
+        <Method name="printPlaceMenu" returnType="void" visibility="public">
+          <Argument type="String" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuParis" package="CompositePattern" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="pairsMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="pairsSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuSales" package="CompositePattern" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="traffic" type="String" visibility="package"/>
+        <Field name="stay" type="String" visibility="package"/>
+        <Field name="culture" type="String" visibility="package"/>
+        <Field name="sale" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuSeoul" package="CompositePattern" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="seoulMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="seoulSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuTokyo" package="CompositePattern" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="tokyoMenu" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="tokyoSales" type="ArrayList&lt;MenuComponent&gt;" visibility="package"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="days" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="sale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="String" name="description"/>
+          <Argument type="String" name="days"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="addSales" returnType="void" visibility="public">
+          <Argument type="String" name="traffic"/>
+          <Argument type="String" name="stay"/>
+          <Argument type="String" name="culture"/>
+          <Argument type="int" name="sale"/>
+        </Method>
+        <Method name="getList" returnType="ArrayList" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="MenuComponent" name="menuComponent"/>
+        </Method>
+        <Method name="getChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getSalesChild" returnType="MenuComponent" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getDays" returnType="String" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FreeSum" package="Daily" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="tsp" type="double" visibility="package"/>
+        <Field name="ssp" type="double" visibility="package"/>
+        <Field name="tc" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="settsp" returnType="void" visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Method>
+        <Method name="setssp" returnType="void" visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Method>
+        <Method name="getFreeSum" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NewMain" package="Daily" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CompositeIterator" package="IteratorPattern" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="stack" type="Stack&lt;Iterator&lt;MenuComponent&gt;&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Iterator" name="iterator"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="next" returnType="MenuComponent" visibility="public"/>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NullIterator" package="IteratorPattern" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="next" returnType="Object" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Observer" package="ObserverPattern" visibility="public" xPosition="920.0" yPosition="820.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Schedule" package="ObserverPattern" visibility="public" xPosition="1220.0" yPosition="820.0">
+      <Fields>
+        <Field name="startmonth" type="int" visibility="private"/>
+        <Field name="startday" type="int" visibility="private"/>
+        <Field name="returnmonth" type="int" visibility="private"/>
+        <Field name="returnday" type="int" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="text" type="String" visibility="private"/>
+        <Field name="observers" type="ArrayList&lt;Observer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+        <Method name="setdays" returnType="void" visibility="public">
+          <Argument type="int" name="startmonth"/>
+          <Argument type="int" name="startday"/>
+          <Argument type="int" name="returnmonth"/>
+          <Argument type="int" name="returnday"/>
+          <Argument type="int" name="people"/>
+          <Argument type="String" name="place"/>
+        </Method>
+        <Method name="getStartmonth" returnType="int" visibility="public"/>
+        <Method name="getStartday" returnType="int" visibility="public"/>
+        <Method name="getReturnmonth" returnType="int" visibility="public"/>
+        <Method name="getReturnday" returnType="int" visibility="public"/>
+        <Method name="getPeople" returnType="int" visibility="public"/>
+        <Method name="getPlace" returnType="String" visibility="public"/>
+        <Method name="getDaily" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Subject" package="ObserverPattern" visibility="public" xPosition="1520.0" yPosition="820.0">
+      <Methods>
+        <Method name="register" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyobserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Singletonn" package="SingletonPattern" visibility="public" xPosition="1820.0" yPosition="820.0">
+      <Fields>
+        <Field name="interimcheck" type="Singletonn" visibility="private" isStatic="true" isVolatile="true"/>
+        <Field name="flag" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="freemoney" type="int" visibility="private"/>
+        <Field name="pacmoney" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Singletonn" visibility="public" isStatic="true"/>
+        <Method name="setFreeMoney" returnType="void" visibility="public">
+          <Argument type="int" name="m"/>
+        </Method>
+        <Method name="getFreeMoney" returnType="int" visibility="public"/>
+        <Method name="setPacMoney" returnType="void" visibility="public">
+          <Argument type="int" name="m"/>
+        </Method>
+        <Method name="getPacMoney" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Culture" package="StatePattern" visibility="public" xPosition="2120.0" yPosition="820.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="cp" type="int" visibility="private"/>
+        <Field name="daegu" type="Culturestate" visibility="package"/>
+        <Field name="paris" type="Culturestate" visibility="package"/>
+        <Field name="tokyo" type="Culturestate" visibility="package"/>
+        <Field name="jeju" type="Culturestate" visibility="package"/>
+        <Field name="seoul" type="Culturestate" visibility="package"/>
+        <Field name="culturestate" type="Culturestate" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="place"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCulturepice" returnType="int" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureDaegu" package="StatePattern" visibility="public" xPosition="20.0" yPosition="1220.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="dcul" type="String[]" visibility="private"/>
+        <Field name="dp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureJeju" package="StatePattern" visibility="public" xPosition="320.0" yPosition="1220.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="jcul" type="String[]" visibility="private"/>
+        <Field name="jp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureParis" package="StatePattern" visibility="public" xPosition="620.0" yPosition="1220.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="pcul" type="String[]" visibility="private"/>
+        <Field name="pp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureSeoul" package="StatePattern" visibility="public" xPosition="920.0" yPosition="1220.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="scul" type="String[]" visibility="private"/>
+        <Field name="sp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Culturestate" package="StatePattern" visibility="public" xPosition="1220.0" yPosition="1220.0">
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="CultureTokyo" package="StatePattern" visibility="public" xPosition="1520.0" yPosition="1220.0">
+      <Fields>
+        <Field name="culture" type="Culture" visibility="package"/>
+        <Field name="tcul" type="String[]" visibility="private"/>
+        <Field name="tp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Culture" name="culture"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCulture" returnType="String[]" visibility="public"/>
+        <Method name="getCultureprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Stay" package="StatePattern" visibility="public" xPosition="1820.0" yPosition="1220.0">
+      <Fields>
+        <Field name="sp" type="int" visibility="private"/>
+        <Field name="GuestHouse" type="Staystate" visibility="package"/>
+        <Field name="Hotel" type="Staystate" visibility="package"/>
+        <Field name="Pension" type="Staystate" visibility="package"/>
+        <Field name="Resort" type="Staystate" visibility="package"/>
+        <Field name="staystate" type="Staystate" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setState" returnType="void" visibility="public">
+          <Argument type="String" name="s"/>
+        </Method>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoompice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+          <Argument type="int" name="num"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayGuestHouse" package="StatePattern" visibility="public" xPosition="2120.0" yPosition="1220.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="groom" type="String[]" visibility="private"/>
+        <Field name="grp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayHotel" package="StatePattern" visibility="public" xPosition="20.0" yPosition="1620.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="hroom" type="String[]" visibility="private"/>
+        <Field name="hrp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayPension" package="StatePattern" visibility="public" xPosition="320.0" yPosition="1620.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="proom" type="String[]" visibility="private"/>
+        <Field name="prp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StayResort" package="StatePattern" visibility="public" xPosition="620.0" yPosition="1620.0">
+      <Fields>
+        <Field name="stay" type="Stay" visibility="package"/>
+        <Field name="rroom" type="String[]" visibility="private"/>
+        <Field name="rrp" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Stay" name="stay"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Staystate" package="StatePattern" visibility="public" xPosition="920.0" yPosition="1620.0">
+      <Methods>
+        <Method name="getRoom" returnType="String[]" visibility="public"/>
+        <Method name="getRoomprice" returnType="int" visibility="public">
+          <Argument type="int" name="r"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Traffic" package="StatePattern" visibility="public" xPosition="1220.0" yPosition="1620.0">
+      <Fields>
+        <Field name="subject" type="Subject" visibility="private"/>
+        <Field name="place" type="String" visibility="private"/>
+        <Field name="people" type="int" visibility="private"/>
+        <Field name="tp" type="int" visibility="private"/>
+        <Field name="daegu" type="TrafficState" visibility="package"/>
+        <Field name="paris" type="TrafficState" visibility="package"/>
+        <Field name="tokyo" type="TrafficState" visibility="package"/>
+        <Field name="jeju" type="TrafficState" visibility="package"/>
+        <Field name="seoul" type="TrafficState" visibility="package"/>
+        <Field name="state" type="TrafficState" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Subject" name="subject"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="palce"/>
+          <Argument type="int" name="people"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficDaegu" package="StatePattern" visibility="public" xPosition="1520.0" yPosition="1620.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="bus" type="String" visibility="private"/>
+        <Field name="ktx" type="String" visibility="private"/>
+        <Field name="bp" type="int" visibility="private"/>
+        <Field name="kp" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficJeju" package="StatePattern" visibility="public" xPosition="1820.0" yPosition="1620.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="vessel" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="vp" type="int" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficParis" package="StatePattern" visibility="public" xPosition="2120.0" yPosition="1620.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrafficSeoul" package="StatePattern" visibility="public" xPosition="20.0" yPosition="2020.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="bus" type="String" visibility="private"/>
+        <Field name="ktx" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="bp" type="int" visibility="private"/>
+        <Field name="kp" type="int" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="TrafficState" package="StatePattern" visibility="public" xPosition="320.0" yPosition="2020.0">
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="TrafficTokyo" package="StatePattern" visibility="public" xPosition="620.0" yPosition="2020.0">
+      <Fields>
+        <Field name="traffic" type="Traffic" visibility="package"/>
+        <Field name="error" type="String" visibility="private"/>
+        <Field name="air" type="String" visibility="private"/>
+        <Field name="ap" type="int" visibility="private"/>
+        <Field name="TrafficList" type="String[]" visibility="private"/>
+        <Field name="TrafficPrice" type="int" visibility="private"/>
+        <Field name="tname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Traffic" name="traffic"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setTraffic" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+        </Method>
+        <Method name="getTraffic" returnType="String[]" visibility="public"/>
+        <Method name="getTrafficprice" returnType="int" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CultureUi" package="Ui" visibility="public" xPosition="920.0" yPosition="2020.0">
+      <Fields>
+        <Field name="fe" type="FreeShedule" visibility="package"/>
+        <Field name="sc" type="Schedule" visibility="package"/>
+        <Field name="si" type="Singletonn" visibility="package"/>
+        <Field name="ct" type="Culture" visibility="package"/>
+        <Field name="CultureList" type="String[]" visibility="package"/>
+        <Field name="CulturePrice" type="int" visibility="package" isStatic="true"/>
+        <Field name="freemoney" type="int" visibility="package" isStatic="true"/>
+        <Field name="model" type="DefaultTableModel" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jDialog1" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog2" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog3" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog4" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jFrame1" type="javax.swing.JFrame" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jList1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FreeShedule" package="Ui" visibility="public" xPosition="1220.0" yPosition="2020.0">
+      <Fields>
+        <Field name="poeple" type="String" visibility="package" isStatic="true"/>
+        <Field name="place" type="String" visibility="package" isStatic="true"/>
+        <Field name="startdays" type="String" visibility="package" isStatic="true"/>
+        <Field name="returndays" type="String" visibility="package" isStatic="true"/>
+        <Field name="startmonth" type="String" visibility="package" isStatic="true"/>
+        <Field name="startday" type="String" visibility="package" isStatic="true"/>
+        <Field name="returnmonth" type="String" visibility="package" isStatic="true"/>
+        <Field name="returnday" type="String" visibility="package" isStatic="true"/>
+        <Field name="m" type="String" visibility="package" isStatic="true"/>
+        <Field name="poepleint" type="int" visibility="package" isStatic="true"/>
+        <Field name="startmonthint" type="int" visibility="package" isStatic="true"/>
+        <Field name="startdayint" type="int" visibility="package" isStatic="true"/>
+        <Field name="returnmonthint" type="int" visibility="package" isStatic="true"/>
+        <Field name="returndayint" type="int" visibility="package" isStatic="true"/>
+        <Field name="days" type="int" visibility="package" isStatic="true"/>
+        <Field name="schedule" type="Schedule" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jDateChooser1" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FreeStay" package="Ui" visibility="public" xPosition="1520.0" yPosition="2020.0">
+      <Fields>
+        <Field name="st" type="Stay" visibility="package"/>
+        <Field name="stayList" type="String[]" visibility="package"/>
+        <Field name="stayPrice" type="int" visibility="package" isStatic="true"/>
+        <Field name="model" type="DefaultTableModel" visibility="package"/>
+        <Field name="si" type="Singletonn" visibility="package"/>
+        <Field name="freemoney" type="int" visibility="package" isStatic="true"/>
+        <Field name="rnum" type="int" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jComboBox2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jList1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FreeTraffic" package="Ui" visibility="public" xPosition="1820.0" yPosition="2020.0">
+      <Fields>
+        <Field name="fe" type="FreeShedule" visibility="package"/>
+        <Field name="sc" type="Schedule" visibility="package"/>
+        <Field name="tr" type="Traffic" visibility="package"/>
+        <Field name="si" type="Singletonn" visibility="package"/>
+        <Field name="trafficList" type="String[]" visibility="package"/>
+        <Field name="trafficPrice" type="int" visibility="package" isStatic="true"/>
+        <Field name="model" type="DefaultTableModel" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jComboBox1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jList1ValueChanged" returnType="void" visibility="private">
+          <Argument type="javax.swing.event.ListSelectionEvent" name="evt"/>
+        </Method>
+        <Method name="jList1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LastPrice" package="Ui" visibility="public" xPosition="2120.0" yPosition="2020.0">
+      <Fields>
+        <Field name="si" type="Singletonn" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewJFrame" package="Ui" visibility="public" xPosition="20.0" yPosition="2420.0">
+      <Fields>
+        <Field name="lostsearch" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lostsearch1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lostsearch2" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="lostsearchMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="lostsearchActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="lostsearch1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="lostsearch1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="lostsearch2MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="lostsearch2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OtherJFrame" package="Ui" visibility="public" xPosition="320.0" yPosition="2420.0">
+      <Fields>
+        <Field name="ot" type="OtherExpenses" visibility="package"/>
+        <Field name="propro" type="String[]" visibility="package" isStatic="true"/>
+        <Field name="pri" type="String" visibility="package" isStatic="true"/>
+        <Field name="num" type="String" visibility="package" isStatic="true"/>
+        <Field name="numAA" type="int" visibility="package" isStatic="true"/>
+        <Field name="st" type="String" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jList1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PackageUi" package="Ui" visibility="public" xPosition="620.0" yPosition="2420.0">
+      <Fields>
+        <Field name="fe" type="FreeShedule" visibility="package"/>
+        <Field name="sc" type="Schedule" visibility="package"/>
+        <Field name="model" type="DefaultTableModel" visibility="package"/>
+        <Field name="model1" type="DefaultTableModel" visibility="package"/>
+        <Field name="choicePackage" type="String" visibility="package" isStatic="true"/>
+        <Field name="choicePackagePrice" type="String" visibility="package" isStatic="true"/>
+        <Field name="choicePackagePriceint" type="int" visibility="package" isStatic="true"/>
+        <Field name="packageNumber" type="int" visibility="package" isStatic="true"/>
+        <Field name="DaeguMenu" type="MenuComponent" visibility="package"/>
+        <Field name="SeoulMenu" type="MenuComponent" visibility="package"/>
+        <Field name="TokyoMenu" type="MenuComponent" visibility="package"/>
+        <Field name="JejuMenu" type="MenuComponent" visibility="package"/>
+        <Field name="ParisMenu" type="MenuComponent" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jDialog1" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog2" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog3" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jDialog4" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTable2" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jTextField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTable2MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="daegu" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.Culture" target="ObserverPattern.Observer"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficSeoul" target="StatePattern.TrafficState"/>
+    <HasRelation name="tokyo" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ct" source="Ui.CultureUi" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="SingletonPattern.Singletonn" target="SingletonPattern.Singletonn" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficJeju" target="StatePattern.TrafficState"/>
+    <HasRelation name="stay" source="StatePattern.StayHotel" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficSeoul" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="JejuMenu" source="Ui.PackageUi" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paris" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="TokyoMenu" source="Ui.PackageUi" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="schedule" source="Ui.FreeShedule" target="ObserverPattern.Schedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ot" source="Ui.OtherJFrame" target="CommandPattern.OtherExpenses" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureSeoul" target="StatePattern.Culturestate"/>
+    <UseRelation source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayHotel" target="StatePattern.Staystate"/>
+    <HasRelation name="subject" source="StatePattern.Culture" target="ObserverPattern.Subject" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Menu" source="CompositePattern.Menu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.MenuDetail" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="sm" source="CommandPattern.OtherExpenses" target="CommandPattern.ShowMoney" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficDaegu" target="StatePattern.TrafficState"/>
+    <UseRelation source="IteratorPattern.CompositeIterator" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pairsMenu" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <UseRelation source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyoSales" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="tr" source="Ui.FreeTraffic" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="DaeguMenu" source="Ui.PackageUi" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureJeju" target="StatePattern.Culturestate"/>
+    <HasRelation name="daegu" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="daeguMenu" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="subject" source="StatePattern.Traffic" target="ObserverPattern.Subject" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyo" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="state" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficJeju" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficParis" target="StatePattern.TrafficState"/>
+    <UseRelation source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficDaegu" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.TrafficTokyo" target="StatePattern.TrafficState"/>
+    <IsRelation name="is" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="staystate" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayGuestHouse" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureJeju" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seoul" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seoul" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stack" source="IteratorPattern.CompositeIterator" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureTokyo" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="showmoney" source="CommandPattern.Searchlist" target="CommandPattern.ShowMoney" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.Menu" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="traffic" source="Daily.FreeSum" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.MenuComponent" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tokyoMenu" source="CompositePattern.MenuTokyo" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="Hotel" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fe" source="Ui.CultureUi" target="Ui.FreeShedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ObserverPattern.Subject" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Pension" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="si" source="Ui.CultureUi" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culturestate" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayGuestHouse" target="StatePattern.Staystate"/>
+    <HasRelation name="jeju" source="StatePattern.Culture" target="StatePattern.Culturestate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sc" source="Ui.CultureUi" target="ObserverPattern.Schedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ObserverPattern.Schedule" target="ObserverPattern.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jejuSales" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.Traffic" target="ObserverPattern.Observer"/>
+    <HasRelation name="seoulMenu" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayPension" target="StatePattern.Staystate"/>
+    <HasRelation name="culture" source="StatePattern.CultureParis" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CommandPattern.OtherExpenses" target="CommandPattern.Command" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.Menu" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="stay" source="StatePattern.StayResort" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="allMenus" source="CompositePattern.MenuList" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="interimcheck" source="SingletonPattern.Singletonn" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.StayResort" target="StatePattern.Staystate"/>
+    <HasRelation name="SeoulMenu" source="Ui.PackageUi" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pairsSales" source="CompositePattern.MenuParis" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureTokyo" target="StatePattern.Culturestate"/>
+    <HasRelation name="ParisMenu" source="Ui.PackageUi" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuSales" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="si" source="Ui.FreeStay" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureDaegu" target="StatePattern.Culturestate"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficTokyo" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="Daily.FreeSum" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Daily.FreeSum" target="StatePattern.Stay" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="Resort" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="st" source="Ui.FreeStay" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="GuestHouse" source="StatePattern.Stay" target="StatePattern.Staystate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jeju" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="daeguSales" source="CompositePattern.MenuDaegu" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="jejuMenu" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <HasRelation name="sc" source="Ui.FreeTraffic" target="ObserverPattern.Schedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sc" source="Ui.PackageUi" target="ObserverPattern.Schedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fe" source="Ui.FreeTraffic" target="Ui.FreeShedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fe" source="Ui.PackageUi" target="Ui.FreeShedule" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Daily.FreeSum" target="StatePattern.Traffic" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="si" source="Ui.FreeTraffic" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seoulSales" source="CompositePattern.MenuSeoul" target="CompositePattern.MenuComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MenuComponent&gt;"/>
+    <IsRelation name="is" source="CompositePattern.MenuJeju" target="CompositePattern.MenuComponent"/>
+    <HasRelation name="traffic" source="StatePattern.TrafficParis" target="StatePattern.Traffic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureDaegu" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="culture" source="StatePattern.CultureSeoul" target="StatePattern.Culture" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paris" source="StatePattern.Traffic" target="StatePattern.TrafficState" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="CommandPattern.Searchlist" target="CommandPattern.Command"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="StatePattern.CultureParis" target="StatePattern.Culturestate"/>
+    <HasRelation name="si" source="Ui.LastPrice" target="SingletonPattern.Singletonn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="stay" source="StatePattern.StayPension" target="StatePattern.Stay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ObserverPattern.Schedule" target="ObserverPattern.Subject"/>
+    <HasRelation name="observers" source="ObserverPattern.Schedule" target="ObserverPattern.Observer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Observer&gt;"/>
+    <HasRelation name="command" source="CommandPattern.OtherExpenses" target="CommandPattern.Command" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
